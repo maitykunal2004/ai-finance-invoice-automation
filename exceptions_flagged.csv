@@ -1,3 +1,6 @@
-exception_id,invoice_id,vendor_name,discrepancy_type,detected_variance,action_required
-EXC-001,INV-2026-003,Apex Office Tech,TAX_MISMATCH,+50.00,Verify GST rate with vendor statement
-EXC-002,INV-2026-005,Swift Freight,DUPLICATE_INVOICE_CHECK,0.00,Confirm payment status in Oracle E1 ledger
+exception_id,invoice_id,vendor_name,discrepancy_type,detected_variance,action_required,detected_on
+EXC-0003-1,INV-2026-1003,Apex Office Tech,TAX_MISMATCH,+150.00,"Expected tax 750.00, received 900.00; verify rate with vendor",2026-11-10
+EXC-0006-1,INV-2026-1006,Acme Supplies Corp,DUPLICATE_INVOICE,0.00,Confirm no prior payment in ERP ledger,2026-11-10
+EXC-0007-1,INV-2026-1007,NCR Atleos Facilities,MISSING_PO_REFERENCE,0.00,Attach approved PO or log as non-PO exception,2026-11-10
+EXC-0008-1,INV-2026-1008,Metro Landlord Services,INVALID_AMOUNT,0.00,Correct invoice amount before posting,2026-11-10
+EXC-0009-1,INV-2026-1009,Pinnacle IT Hardware,TAX_MISMATCH,+224.00,"Expected tax 1120.00, received 1344.00; verify rate with vendor",2026-11-10

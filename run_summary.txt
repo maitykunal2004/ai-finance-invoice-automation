@@ -1,0 +1,8 @@
+AP Invoice Pipeline - Run Summary
+Rows processed: 12
+Exceptions raised: 5
+  DUPLICATE_INVOICE: 1
+  INVALID_AMOUNT: 1
+  MATCHED: 7
+  MISSING_PO_REFERENCE: 1
+  TAX_MISMATCH: 2
