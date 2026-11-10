@@ -7,8 +7,10 @@ vendor invoice is currently caught only because someone happens to notice it.
 
 ![Control dashboard](docs/dashboard.png)
 
+![ci](https://github.com/maitykunal2004/ai-finance-invoice-automation/actions/workflows/ci.yml/badge.svg)
+
 **Zero dependencies.** Python 3.8+ standard library only, no `pip install`. 13 unit tests.
-CI runs on Python 3.9 to 3.13 on every push.
+CI runs on Python 3.10 to 3.13 on every push.
 
 ## Where this came from
 
@@ -123,7 +125,7 @@ rows rather than quadratic in pairs.
 | `report.py` | Self-contained HTML dashboard from pipeline output |
 | `generate_batch.py` | Seeded synthetic batch generator with planted defects |
 | `benchmark.py` | Runtime plus recall and precision against ground truth |
-| `test_intake.py`, `test_pipeline.py` | 13 unit tests, run in CI on Python 3.9 to 3.13 |
+| `test_intake.py`, `test_pipeline.py` | 13 unit tests, run in CI on Python 3.10 to 3.13 |
 | `schema.sql` | PostgreSQL schema plus `v_invoice_control_failures`, `v_three_way_match`, `v_exception_summary` |
 | `invoices_raw.csv` | 12-row demo batch |
 | `invoices_processed.csv`, `exceptions_flagged.csv`, `run_summary.txt` | Committed output of `python3 pipeline.py`, reproducible on re-run |
