@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Unit tests (controls and intake)
+        run: python -m unittest discover -s . -p "test_*.py" -v
+
+      - name: Intake parses every sample invoice
+        run: |
+          python intake.py --inbox samples/inbox --out invoices_intake.csv
+          test "$(($(wc -l < invoices_intake.csv) - 1))" -eq 7
+
+      - name: Pipeline runs end to end on the committed batch
+        run: |
+          python pipeline.py
+          test "$(($(wc -l < invoices_processed.csv) - 1))" -eq 12
+
+      - name: Pipeline output is reproducible
+        run: |
+          python pipeline.py --outdir /tmp/rerun
+          diff <(tr -d '\r' < invoices_processed.csv) <(tr -d '\r' < /tmp/rerun/invoices_processed.csv)
+
+      - name: Scale benchmark meets the 50k budget
+        run: |
+          python benchmark.py --rows 50000 | tee /tmp/bench.txt
+          grep -q "Recall on planted defects: 100.0%" /tmp/bench.txt
+
+      - name: Dashboard builds
+        run: |
+          python report.py --out /tmp/dashboard.html
+          grep -q "AP Invoice Control Dashboard" /tmp/dashboard.html
