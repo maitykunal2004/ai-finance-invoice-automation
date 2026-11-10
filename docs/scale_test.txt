@@ -1,0 +1,17 @@
+AP invoice pipeline - scale and accuracy test
+Rows in batch: 50,748
+Runtime: 0.20 s  (252,431 rows/s)
+
+Control                   Planted   Caught   Recall
+DUPLICATE_INVOICE             748      748   100.0%
+INVALID_AMOUNT                782      782   100.0%
+MISSING_PO_REFERENCE          743      743   100.0%
+TAX_MISMATCH                  739      739   100.0%
+
+Planted defects: 3,012
+Exceptions raised: 3,012
+Recall on planted defects: 100.0%
+Precision (raised exceptions that were planted): 100.0%
+Clean invoices passed through: 47,736
+
+Reproduce with: python3 benchmark.py --rows 50000
