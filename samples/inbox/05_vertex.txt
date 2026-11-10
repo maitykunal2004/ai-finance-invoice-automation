@@ -1,0 +1,8 @@
+Vertex Solutions
+Invoice number: VS-2026-0198
+Invoice date: 7/11/2026
+P.O.# PO-88494
+
+Annual software maintenance        3,200.00
+Tax amount                           160.00
+Invoice total                      3,360.00

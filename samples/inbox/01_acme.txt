@@ -1,0 +1,16 @@
+ACME SUPPLIES CORP
+Plot 44, Okhla Industrial Estate, New Delhi 110020
+GSTIN: 07AABCA1234B1Z5
+
+TAX INVOICE
+Invoice No.: INV-2026-2001
+Invoice Date: 03/11/2026
+P.O. No: PO-88491
+
+Description            Qty     Rate        Amount
+A4 Paper Ream           40    250.00     10,000.00
+Toner Cartridge         10    250.00      2,500.00
+
+Sub Total                                Rs. 12,500.00
+GST @5%                                  Rs. 625.00
+Invoice Total                            Rs. 13,125.00

@@ -1,0 +1,9 @@
+Global Logistics Ltd
+Invoice # GL-2026-4471
+Dated: 4 Nov 2026
+Purchase Order: PO-88492
+
+Freight charges, Delhi to Gurugram, 11 consignments
+Taxable value   8,400.50
+GST 5%            420.03
+Grand Total   8,820.53

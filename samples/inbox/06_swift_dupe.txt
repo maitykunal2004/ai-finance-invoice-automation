@@ -1,0 +1,8 @@
+SWIFT FREIGHT
+Invoice No.: INV-2026-1005
+Invoice Date: Nov 8, 2026
+PO No: PO-88495
+
+Surface transport, 3 trucks    7,500.00
+GST                             375.00
+Invoice Total                 7,875.00
