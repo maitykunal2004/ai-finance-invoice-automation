@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.env
+invoices_50k.csv
+invoices_intake.csv
